@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collab Home — SMS Communications Consent</title>
+    <style>
+        :root {
+            --orange: #fc471f;
+            --teal: #a1c9ca;
+            --green: #5cc489;
+            --dark: #151718;
+            --warm-white: #f8f6f2;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: var(--warm-white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        .header {
+            background: var(--dark);
+            padding: 24px 0;
+            text-align: center;
+        }
+        .header h1 {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .header h1 span { color: var(--orange); }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 32px;
+        }
+        .section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+        .section p, .section li {
+            font-size: 0.95rem;
+            color: #444;
+        }
+        .section ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        .section ul li { margin-bottom: 6px; }
+        .highlight-box {
+            background: #eef7f1;
+            border-left: 4px solid var(--green);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        .highlight-box p {
+            font-size: 0.93rem;
+            color: #333;
+        }
+        .keyword {
+            display: inline-block;
+            background: var(--dark);
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-size: 0.85rem;
+            margin: 2px 2px;
+        }
+        .consent-form {
+            border: 2px solid var(--teal);
+        }
+        .consent-form h3 { color: var(--dark); }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #333;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(161,201,202,0.3);
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 20px 0 24px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 4px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--green);
+        }
+        .checkbox-group label {
+            font-size: 0.88rem;
+            color: #444;
+            line-height: 1.5;
+        }
+        .btn-submit {
+            background: var(--orange);
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover { background: #e33d18; }
+        .btn-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .success-msg {
+            display: none;
+            background: #eef7f1;
+            border: 2px solid var(--green);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 16px;
+        }
+        .success-msg h3 { color: var(--green); margin-bottom: 8px; }
+        .legal {
+            font-size: 0.82rem;
+            color: #888;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+        .footer {
+            text-align: center;
+            padding: 32px 24px;
+            color: #999;
+            font-size: 0.82rem;
+        }
+        .footer a { color: var(--orange); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><span>Collab</span> Home</h1>
+    </div>
+
+    <div class="container">
+        <h2>SMS Communications Consent</h2>
+        <p class="subtitle">Stay informed about your property — maintenance updates, leasing info, rent reminders, and more.</p>
+
+        <!-- What You'll Receive -->
+        <div class="section">
+            <h3>📱 What Messages Will I Receive?</h3>
+            <p>By opting in, you may receive SMS/MMS messages from Collab Home (+1 510-900-0298) related to:</p>
+            <ul>
+                <li><strong>Maintenance updates</strong> — status of your repair requests and scheduled work</li>
+                <li><strong>Leasing communications</strong> — showing confirmations, application status, and move-in info</li>
+                <li><strong>Rent reminders</strong> — upcoming due dates and payment confirmations</li>
+                <li><strong>Property notices</strong> — building announcements, safety alerts, and community updates</li>
+                <li><strong>Operational coordination</strong> — scheduling for inspections, deliveries, and access</li>
+            </ul>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">
+                Message frequency varies. Typically 1–5 messages per month depending on activity.
+            </p>
+        </div>
+
+        <!-- How to Opt Out -->
+        <div class="section">
+            <h3>🛑 How to Opt Out or Get Help</h3>
+            <p>You can manage your SMS preferences at any time:</p>
+            <div class="highlight-box">
+                <p>
+                    Reply <span class="keyword">STOP</span> to unsubscribe from all messages.<br>
+                    Reply <span class="keyword">HELP</span> for assistance or contact info.<br>
+                    Reply <span class="keyword">START</span> to re-subscribe after opting out.
+                </p>
+            </div>
+            <p>You may also contact us directly:</p>
+            <ul>
+                <li>Email: <a href="mailto:support@collabhome.io">support@collabhome.io</a></li>
+                <li>Phone: <a href="tel:+15109000298">+1 (510) 900-0298</a></li>
+            </ul>
+        </div>
+
+        <!-- Rates & Carrier Info -->
+        <div class="section">
+            <h3>💰 Message & Data Rates</h3>
+            <p>Message and data rates may apply depending on your mobile carrier and plan. Collab Home does not charge for SMS messages, but your carrier's standard messaging rates apply.</p>
+            <p style="margin-top: 8px;">SMS is available to US mobile numbers on all major carriers including AT&T, T-Mobile, Verizon, and others.</p>
+        </div>
+
+        <!-- Consent Form -->
+        <div class="section consent-form" id="consent-section">
+            <h3>✅ Opt In to Receive SMS</h3>
+            <p style="margin-bottom: 16px;">Complete the form below to consent to receiving SMS communications from Collab Home property management.</p>
+
+            <form id="optin-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address (optional)</label>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="property">Property / Unit (optional)</label>
+                    <input type="text" id="property" name="property" placeholder="1773 Oxford St, Unit 405">
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">
+                        I agree to receive SMS/MMS messages from Collab Home at the phone number provided. I understand that message and data rates may apply, message frequency varies, and I can reply <strong>STOP</strong> to unsubscribe at any time. I have read the terms below.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submit-btn">Opt In to SMS</button>
+            </form>
+
+            <div class="success-msg" id="success-msg">
+                <h3>✅ You're Opted In!</h3>
+                <p>Thank you for subscribing to Collab Home SMS updates. You'll receive a confirmation text shortly.</p>
+                <p style="margin-top: 8px; font-size: 0.88rem; color: #666;">Reply STOP at any time to unsubscribe.</p>
+            </div>
+
+            <p class="legal">
+                By submitting this form, you provide your express written consent to receive recurring automated SMS/MMS messages from Collab Home (Collab Z Inc. / Collab CA LLC) at the mobile number you provide. Consent is not a condition of purchasing any goods or services. You may revoke consent at any time by texting STOP. For help, text HELP or email support@collabhome.io. View our <a href="https://collabhome.io/privacy" target="_blank">Privacy Policy</a> and <a href="https://collabhome.io/terms" target="_blank">Terms of Service</a>.
+            </p>
+        </div>
+
+        <!-- Additional Opt-In Methods -->
+        <div class="section">
+            <h3>📋 Other Ways to Opt In</h3>
+            <p>Tenants and contacts may also opt in to Collab Home SMS through:</p>
+            <ul>
+                <li><strong>Lease agreement</strong> — SMS consent clause included in the lease signing process</li>
+                <li><strong>Collab Home App</strong> — notification preferences within the mobile app (<a href="https://living.collabhome.io/#get-the-app" target="_blank">download here</a>)</li>
+                <li><strong>Rental inquiry</strong> — when submitting a leasing inquiry on <a href="https://rentals.collabhome.io" target="_blank">rentals.collabhome.io</a>, you may opt in to SMS updates</li>
+                <li><strong>In-person</strong> — during property showings or office visits with written consent</li>
+            </ul>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: #666;">
+                Regardless of opt-in method, you can always text STOP to unsubscribe.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Collab Z Inc. All rights reserved. | <a href="https://collabhome.io">collabhome.io</a></p>
+        <p style="margin-top: 4px;">29 Orinda Way, #536, Orinda, CA 94563</p>
+    </div>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('optin-form').style.display = 'none';
+            document.getElementById('success-msg').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
